@@ -171,5 +171,27 @@ namespace Postgres_Viewer
             DataTableView.Rows.Clear();
             DataTableView.Columns.Clear();
         }
+
+        private void exportToCsvToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+            {
+                saveFileDialog.Filter = "CSV files (*.csv)|*.csv|All files (*.*)|*.*";
+                saveFileDialog.FilterIndex = 1;
+                saveFileDialog.RestoreDirectory = true;
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string filePath = saveFileDialog.FileName;
+                    if (FileManager.ExportDataGridViewToCSV(DataTableView, filePath))
+                    {
+                        MessageBox.Show(filePath , "Success");
+                    }
+                    else {
+                        MessageBox.Show("Failed to Exoprt", "Error");
+                    }
+                }
+            }
+        }
     }
 }

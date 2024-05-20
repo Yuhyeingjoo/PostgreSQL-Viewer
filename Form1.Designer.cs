@@ -50,6 +50,7 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tableListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clearViewerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportToCsvToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -254,7 +255,8 @@
             // 
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tableListToolStripMenuItem,
-            this.clearViewerToolStripMenuItem});
+            this.clearViewerToolStripMenuItem,
+            this.exportToCsvToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(42, 20);
             this.toolStripMenuItem1.Text = "Tool";
@@ -270,8 +272,15 @@
             // 
             this.clearViewerToolStripMenuItem.Name = "clearViewerToolStripMenuItem";
             this.clearViewerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.clearViewerToolStripMenuItem.Text = "ClearViewer";
+            this.clearViewerToolStripMenuItem.Text = "Clear Viewer";
             this.clearViewerToolStripMenuItem.Click += new System.EventHandler(this.clearViewerToolStripMenuItem_Click);
+            // 
+            // exportToCsvToolStripMenuItem
+            // 
+            this.exportToCsvToolStripMenuItem.Name = "exportToCsvToolStripMenuItem";
+            this.exportToCsvToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exportToCsvToolStripMenuItem.Text = "Export to csv";
+            this.exportToCsvToolStripMenuItem.Click += new System.EventHandler(this.exportToCsvToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -321,6 +330,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem tableListToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clearViewerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exportToCsvToolStripMenuItem;
     }
 }
 
