@@ -34,7 +34,16 @@
 
 
 
+
+---
+
+
 # 실행 예시
+https://www.postgresqltutorial.com/wp-content/uploads/2019/05/dvdrental.zip
+
+데이터베이스는 상기 PostgresSQL 공식 사이트에서 제공하는 샘플을 사용했습니다.
+
+
 
 ![image](https://github.com/Yuhyeingjoo/Postgres-/assets/54518241/7b4b7bd9-e5aa-494a-91a3-9b2c2755e00e)
 
