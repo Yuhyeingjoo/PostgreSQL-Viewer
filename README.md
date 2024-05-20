@@ -41,7 +41,7 @@
 # 실행 예시
 https://www.postgresqltutorial.com/wp-content/uploads/2019/05/dvdrental.zip
 
-데이터베이스는 상기 PostgresSQL 공식 사이트에서 제공하는 샘플을 사용했습니다.
+데이터베이스는 상기 PostgresSQL 튜토리얼 사이트에서 제공하는 샘플을 사용했습니다.
 
 
 
