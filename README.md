@@ -30,3 +30,36 @@
 4. Tool -> Tabl List는 현재 연결된 데이터베이스의 모든 테이블을 표에 표시합니다.
 
 5. Tool -> Export to csv는 현재 표에 있는 데이터 테이블을 csv 파일로 내보냅니다.
+
+
+
+
+# 실행 예시
+
+![image](https://github.com/Yuhyeingjoo/Postgres-/assets/54518241/7b4b7bd9-e5aa-494a-91a3-9b2c2755e00e)
+
+1. Host, Postgres의 사용자 이름, Postgres의 비밀번호, 접속할 데이터베이스 이름을 입력한 후 Connect 버튼을 클릭하면 해당 데이터베이스에 접속하여 모든 테이블을 나열합니다.
+
+
+
+![image](https://github.com/Yuhyeingjoo/Postgres-/assets/54518241/7f0a1a7b-d164-4084-bdb8-bdf6c82c1de0)
+
+2. SQL 쿼리를 입력하고 Run 버튼을 클릭합니다. 실행 결과가 표에 표시됩니다.
+
+
+
+![image](https://github.com/Yuhyeingjoo/Postgres-/assets/54518241/dd3acbfc-420a-4d50-80c6-61eeed99f4e2)
+![image](https://github.com/Yuhyeingjoo/Postgres-/assets/54518241/6fe64cd4-0672-4b3a-8e79-f1a9b245ab4b)
+
+3. Tool -> Export to csv 클릭하여 원하는 경로에 csv 파일을 생성합니다.
+
+
+![image](https://github.com/Yuhyeingjoo/Postgres-/assets/54518241/f90962b9-830c-4bd7-aa71-11963c19ff8a)
+![image](https://github.com/Yuhyeingjoo/Postgres-/assets/54518241/57f5bb4d-7e51-4f29-897a-f428cef326ce)
+
+4. Tool -> Clear Viewer 를 선택하여 현재 표를 비웁니다.
+
+
+![image](https://github.com/Yuhyeingjoo/Postgres-/assets/54518241/12579693-4065-46a6-b7c5-28d2bb2c3a3e)
+
+5.  Tool -> Table list 를 선택하여 접속한 데이터베이스의 테이블 리스트를 표시합니다. 
