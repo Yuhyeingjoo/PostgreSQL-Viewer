@@ -1,13 +1,17 @@
 ﻿using Npgsql;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Npgsql.Replication.PgOutput.Messages.RelationMessage;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Postgres_Viewer
 {
@@ -15,12 +19,27 @@ namespace Postgres_Viewer
     {
        
         NpgsqlConnection connection;
-
+        List< System.Windows.Forms.TextBox> textBoxes = new List<System.Windows.Forms.TextBox>();
         public Form1()
         {
             InitializeComponent();
+            initUserComponent();
+            typeof(DataGridView).InvokeMember("DoubleBuffered", BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.SetProperty, null, DataTableView, new object[] { true });
         }
-
+        private void initUserComponent() {
+            textBoxSQL.KeyDown += new KeyEventHandler(TextBox_KeyDown);
+            textBoxes.Add(textBoxHost);
+            textBoxes.Add(textBoxDBName);
+            textBoxes.Add(textBoxPasswd);
+            textBoxes.Add(textBoxUserName);
+        }
+        private void TextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                buttonRun_Click(null, null);
+            }
+        }
         private void buttonConnect_Click(object sender, EventArgs e)
         {
             string host = textBoxHost.Text;
@@ -35,20 +54,16 @@ namespace Postgres_Viewer
             }
             string connectionString = $"Host={host};Port={port};Username={username};Password={password};Database={database}";
             connection = new NpgsqlConnection(connectionString);
-
-            try {
-                connection.Open();
-                // Sample query execution
-               
+            
+            if (QueryManager.connect(connection) && QueryManager.GetTables(connection, DataTableView)) {
+                buttonConnect.Enabled = false;
+                StatusVar.connected = true;
+                foreach (var box in textBoxes) { 
+                    box.ReadOnly = true;
+                }
             }
-            catch (Exception ex) { 
-                Console.WriteLine(ex.Message);
-                MessageBox.Show("데이터베이스 접속 실패", "Error");
-                return;
-            }
-
-            buttonConnect.Enabled = false;
-            StatusVar.connected = true;
+           
+            
         }
 
         private void buttonDisconnect_Click(object sender, EventArgs e)
@@ -58,6 +73,10 @@ namespace Postgres_Viewer
                 connection.Close();
                 buttonConnect.Enabled = true;
                 StatusVar.connected = false;
+                foreach (var box in textBoxes)
+                {
+                    box.ReadOnly = false;
+                }
             }
             catch { 
             
@@ -78,22 +97,30 @@ namespace Postgres_Viewer
                 {
                     using (var reader = command.ExecuteReader())
                     {
+                        // DataGridView 초기화
+                        DataTableView.Rows.Clear();
+                        DataTableView.Columns.Clear();
+
+
                         // 반환된 데이터가 있는지 확인
-                        
+
                         if (reader is string)
                         {
+                            DataGridViewTextBoxColumn column = new DataGridViewTextBoxColumn();
+                            DataTableView.Columns.Add(column);
+                            DataTableView.Rows.Add(reader);
                             Console.WriteLine($"String result: {reader}");
                         }
                         else if (reader is int)
-                        { 
+                        {
+                            DataGridViewTextBoxColumn column = new DataGridViewTextBoxColumn();
+                            DataTableView.Columns.Add(column);
+                            DataTableView.Rows.Add(reader.ToString());
                             Console.WriteLine($"Integer result: {reader}");
                         }
                         else if (reader.HasRows)
                         {
-                            // DataGridView 초기화
-                            DataTableView.Rows.Clear();
-                            DataTableView.Columns.Clear();
-
+                           
                             // 컬럼 헤더 추가
                             for (int i = 0; i < reader.FieldCount; i++)
                             {
@@ -130,6 +157,19 @@ namespace Postgres_Viewer
             
             }
             
+        }
+
+        private void tableListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (StatusVar.connected) {
+                QueryManager.GetTables(connection, DataTableView);
+            }
+        }
+
+        private void clearViewerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DataTableView.Rows.Clear();
+            DataTableView.Columns.Clear();
         }
     }
 }

@@ -46,28 +46,33 @@
             this.textBoxSQL = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.DataTableView = new System.Windows.Forms.DataGridView();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tableListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clearViewerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataTableView)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel3, 0, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 24);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 38.29787F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 61.70213F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 355F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(870, 450);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(870, 426);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel1
@@ -85,7 +90,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(864, 30);
+            this.panel1.Size = new System.Drawing.Size(864, 29);
             this.panel1.TabIndex = 0;
             // 
             // buttonDisconnect
@@ -181,9 +186,9 @@
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.textBoxSQL);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 39);
+            this.panel2.Location = new System.Drawing.Point(3, 38);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(864, 52);
+            this.panel2.Size = new System.Drawing.Size(864, 49);
             this.panel2.TabIndex = 1;
             // 
             // buttonRun
@@ -216,7 +221,7 @@
             // 
             this.panel3.Controls.Add(this.DataTableView);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(3, 97);
+            this.panel3.Location = new System.Drawing.Point(3, 93);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(864, 350);
             this.panel3.TabIndex = 2;
@@ -235,14 +240,49 @@
             this.DataTableView.Size = new System.Drawing.Size(864, 350);
             this.DataTableView.TabIndex = 0;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(870, 24);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tableListToolStripMenuItem,
+            this.clearViewerToolStripMenuItem});
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(42, 20);
+            this.toolStripMenuItem1.Text = "Tool";
+            // 
+            // tableListToolStripMenuItem
+            // 
+            this.tableListToolStripMenuItem.Name = "tableListToolStripMenuItem";
+            this.tableListToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tableListToolStripMenuItem.Text = "TableList";
+            this.tableListToolStripMenuItem.Click += new System.EventHandler(this.tableListToolStripMenuItem_Click);
+            // 
+            // clearViewerToolStripMenuItem
+            // 
+            this.clearViewerToolStripMenuItem.Name = "clearViewerToolStripMenuItem";
+            this.clearViewerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.clearViewerToolStripMenuItem.Text = "ClearViewer";
+            this.clearViewerToolStripMenuItem.Click += new System.EventHandler(this.clearViewerToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(870, 450);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Postgres Viewer";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -250,7 +290,10 @@
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DataTableView)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -274,6 +317,10 @@
         private System.Windows.Forms.TextBox textBoxSQL;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView DataTableView;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem tableListToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem clearViewerToolStripMenuItem;
     }
 }
 
