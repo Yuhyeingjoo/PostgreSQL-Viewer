@@ -73,7 +73,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(870, 426);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(870, 457);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel1
@@ -224,7 +224,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(3, 93);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(864, 350);
+            this.panel3.Size = new System.Drawing.Size(864, 361);
             this.panel3.TabIndex = 2;
             // 
             // DataTableView
@@ -238,7 +238,7 @@
             this.DataTableView.Name = "DataTableView";
             this.DataTableView.ReadOnly = true;
             this.DataTableView.RowTemplate.Height = 23;
-            this.DataTableView.Size = new System.Drawing.Size(864, 350);
+            this.DataTableView.Size = new System.Drawing.Size(864, 361);
             this.DataTableView.TabIndex = 0;
             // 
             // menuStrip1
@@ -286,7 +286,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(870, 450);
+            this.ClientSize = new System.Drawing.Size(870, 481);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
