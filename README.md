@@ -77,6 +77,7 @@ https://www.postgresqltutorial.com/wp-content/uploads/2019/05/dvdrental.zip
 
 ---
 5.  Tool -> Table list 를 선택하여 접속한 데이터베이스의 테이블 리스트를 표시합니다. 
-![image](https://github.com/Yuhyeingjoo/Postgres-/assets/54518241/12579693-4065-46a6-b7c5-28d2bb2c3a3e)
+![image](https://github.com/Yuhyeingjoo/PostgresViewer/assets/54518241/21f50c19-658a-404b-93b2-b14d499abc18)
+
 
 
