@@ -27,7 +27,7 @@
 
 ![image](https://github.com/Yuhyeingjoo/PostgresViewer/assets/54518241/ee28a400-e1e8-4ec4-b332-65eb2cf34cf8)
 
-![image](https://github.com/Yuhyeingjoo/Postgres-/assets/54518241/bbcc36c2-8cee-466b-9313-f180fbd9fbee)
+
 
 4. Tool -> Tabl List는 현재 연결된 데이터베이스의 모든 테이블을 표에 표시합니다.
 
