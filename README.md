@@ -53,24 +53,30 @@ https://www.postgresqltutorial.com/wp-content/uploads/2019/05/dvdrental.zip
 
 
 
-![image](https://github.com/Yuhyeingjoo/PostgresViewer/assets/54518241/1eaa5e5b-04c6-4ca5-9387-ed40dc27fe7e)
+---
 
 2. SQL 쿼리를 입력하고 Run 버튼을 클릭합니다. 실행 결과가 표에 표시됩니다.
+![image](https://github.com/Yuhyeingjoo/PostgresViewer/assets/54518241/1eaa5e5b-04c6-4ca5-9387-ed40dc27fe7e)
 
+---
 
+3. Tool -> Export to csv 클릭하여 원하는 경로에 csv 파일을 생성합니다.
 ![image](https://github.com/Yuhyeingjoo/PostgresViewer/assets/54518241/b07fd837-37cf-4bd9-8de9-e01fe974b08e)
 
 ![image](https://github.com/Yuhyeingjoo/Postgres-/assets/54518241/6fe64cd4-0672-4b3a-8e79-f1a9b245ab4b)
 
-3. Tool -> Export to csv 클릭하여 원하는 경로에 csv 파일을 생성합니다.
 
+---
+
+
+4. Tool -> Clear Viewer 를 선택하여 현재 표를 비웁니다.
 
 ![image](https://github.com/Yuhyeingjoo/Postgres-/assets/54518241/f90962b9-830c-4bd7-aa71-11963c19ff8a)
 ![image](https://github.com/Yuhyeingjoo/Postgres-/assets/54518241/57f5bb4d-7e51-4f29-897a-f428cef326ce)
 
-4. Tool -> Clear Viewer 를 선택하여 현재 표를 비웁니다.
 
-
+---
+5.  Tool -> Table list 를 선택하여 접속한 데이터베이스의 테이블 리스트를 표시합니다. 
 ![image](https://github.com/Yuhyeingjoo/Postgres-/assets/54518241/12579693-4065-46a6-b7c5-28d2bb2c3a3e)
 
-5.  Tool -> Table list 를 선택하여 접속한 데이터베이스의 테이블 리스트를 표시합니다. 
+
