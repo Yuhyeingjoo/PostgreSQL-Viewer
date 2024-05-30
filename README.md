@@ -46,15 +46,14 @@ https://www.postgresqltutorial.com/wp-content/uploads/2019/05/dvdrental.zip
 데이터베이스는 상기 PostgresSQL 튜토리얼 사이트에서 제공하는 샘플을 사용했습니다.
 
 
-![image](https://github.com/Yuhyeingjoo/PostgresViewer/assets/54518241/1eaa5e5b-04c6-4ca5-9387-ed40dc27fe7e)
 
-![image](https://github.com/Yuhyeingjoo/Postgres-/assets/54518241/7b4b7bd9-e5aa-494a-91a3-9b2c2755e00e)
 
 1. Host, Postgres의 사용자 이름, Postgres의 비밀번호, 접속할 데이터베이스 이름을 입력한 후 Connect 버튼을 클릭하면 해당 데이터베이스에 접속하여 모든 테이블을 나열합니다.
 
 
 
-![image](https://github.com/Yuhyeingjoo/Postgres-/assets/54518241/7f0a1a7b-d164-4084-bdb8-bdf6c82c1de0)
+
+![image](https://github.com/Yuhyeingjoo/PostgresViewer/assets/54518241/1eaa5e5b-04c6-4ca5-9387-ed40dc27fe7e)
 
 2. SQL 쿼리를 입력하고 Run 버튼을 클릭합니다. 실행 결과가 표에 표시됩니다.
 
