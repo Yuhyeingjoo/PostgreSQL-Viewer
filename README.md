@@ -58,8 +58,8 @@ https://www.postgresqltutorial.com/wp-content/uploads/2019/05/dvdrental.zip
 2. SQL 쿼리를 입력하고 Run 버튼을 클릭합니다. 실행 결과가 표에 표시됩니다.
 
 
+![image](https://github.com/Yuhyeingjoo/PostgresViewer/assets/54518241/b07fd837-37cf-4bd9-8de9-e01fe974b08e)
 
-![image](https://github.com/Yuhyeingjoo/Postgres-/assets/54518241/dd3acbfc-420a-4d50-80c6-61eeed99f4e2)
 ![image](https://github.com/Yuhyeingjoo/Postgres-/assets/54518241/6fe64cd4-0672-4b3a-8e79-f1a9b245ab4b)
 
 3. Tool -> Export to csv 클릭하여 원하는 경로에 csv 파일을 생성합니다.
