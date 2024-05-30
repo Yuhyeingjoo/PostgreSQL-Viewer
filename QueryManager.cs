@@ -36,9 +36,10 @@ namespace Postgres_Viewer
             return Regex.IsMatch(cleanedQuery, @"^\s*SELECT\b", RegexOptions.IgnoreCase);
         }
 
-        public static bool RunQuery(NpgsqlConnection connection, System.Windows.Forms.DataGridView DataTableView, string sql) {
+        public static bool RunQuery(NpgsqlConnection connection, System.Windows.Forms.DataGridView DataTableView, System.Windows.Forms.ListBox listBox ,  string sql) {
             try
             {
+                listBox.ClearSelected();
                 using (var command = new NpgsqlCommand(sql, connection))
                 {
                     if (QueryManager.IsSelectQuery(sql))
@@ -93,22 +94,37 @@ namespace Postgres_Viewer
                                 DataTableView.AutoResizeColumns();
                                 DataTableView.Refresh();
                             }
+                            else if (reader.FieldCount > 0) {
+                                for (int i = 0; i < reader.FieldCount; i++)
+                                {
+                                    DataGridViewTextBoxColumn column = new DataGridViewTextBoxColumn();
+                                    column.HeaderText = reader.GetName(i);
+                                    column.Name = reader.GetName(i);
+                                    DataTableView.Columns.Add(column); // 컬럼 추가
+                                }
+                            }
                             else
                             {
+
                                 Console.WriteLine("No data returned from the query.");
                             }
                         }
                     }
                     else
                     {
+                        DataTableView.Rows.Clear();
+                        DataTableView.Columns.Clear();
                         command.ExecuteNonQuery();
                     }
 
                 }
             }
 
-            catch
+            catch (Exception ex)
             {
+                listBox.Items.Add(ex.Message);
+                
+                
                 return false;
             }
 

@@ -32,12 +32,19 @@ namespace Postgres_Viewer
             textBoxes.Add(textBoxDBName);
             textBoxes.Add(textBoxPasswd);
             textBoxes.Add(textBoxUserName);
+            tabControl1.TabPages[0].Text = "Results";
+            tabControl1.TabPages[1].Text = "Problems";
+            this.listBox1.DrawMode = DrawMode.OwnerDrawFixed;
+            this.listBox1.DrawItem += new DrawItemEventHandler(listBoxErrors_DrawItem);
+            
         }
         private void TextBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
+                e.Handled = true;
                 buttonRun_Click(null, null);
+                return;
             }
         }
         private void buttonConnect_Click(object sender, EventArgs e)
@@ -92,7 +99,7 @@ namespace Postgres_Viewer
             if (sql == "") {
                 return;
             }
-            if (!QueryManager.RunQuery(connection, DataTableView, sql)) {
+            if (!QueryManager.RunQuery(connection, DataTableView, listBox1, sql)) {
                 MessageBox.Show("Failed to Run Query", "Error");
             }
 
@@ -132,6 +139,28 @@ namespace Postgres_Viewer
                     }
                 }
             }
+        }
+
+        private void listBoxErrors_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            // 항목이 없으면 반환
+            if (e.Index < 0) return;
+
+            // 항목 텍스트를 가져옴
+            string text = listBox1.Items[e.Index].ToString();
+
+            // 기본 백그라운드와 포그라운드 색상을 설정
+            e.DrawBackground();
+            e.Graphics.DrawString(text, e.Font, Brushes.Black, e.Bounds);
+
+            // 각 항목 사이에 선을 그리기 위한 펜
+            using (Pen pen = new Pen(Color.Gray))
+            {
+                int y = e.Bounds.Bottom - 1;
+                e.Graphics.DrawLine(pen, e.Bounds.Left, y, e.Bounds.Right, y);
+            }
+
+            e.DrawFocusRectangle();
         }
     }
 }
