@@ -3,7 +3,8 @@
 이 프로젝트는 C# Windows Forms 애플리케이션으로, PostgreSQL 데이터베이스에 연결하여 사용자가 입력한 SQL 쿼리를 실행하고 결과를 표시하는 프로그램입니다.
 
 
-![image](https://github.com/Yuhyeingjoo/Postgres-/assets/54518241/4608ee0f-2e8a-4aea-ab9b-ed8d3c5d9346)
+![image](https://github.com/Yuhyeingjoo/PostgresViewer/assets/54518241/2bfbeb59-e180-4ef5-b731-04b0240e863a)
+
 
 
 ## 기능 및 사용 방법
@@ -24,6 +25,7 @@
 - 입력한 SQL 쿼리가 실행되고, 그 결과가 표에 표시됩니다.
 - 쿼리 결과를 편리하게 확인할 수 있습니다.
 
+![image](https://github.com/Yuhyeingjoo/PostgresViewer/assets/54518241/ee28a400-e1e8-4ec4-b332-65eb2cf34cf8)
 
 ![image](https://github.com/Yuhyeingjoo/Postgres-/assets/54518241/bbcc36c2-8cee-466b-9313-f180fbd9fbee)
 
@@ -44,6 +46,7 @@ https://www.postgresqltutorial.com/wp-content/uploads/2019/05/dvdrental.zip
 데이터베이스는 상기 PostgresSQL 튜토리얼 사이트에서 제공하는 샘플을 사용했습니다.
 
 
+![image](https://github.com/Yuhyeingjoo/PostgresViewer/assets/54518241/1eaa5e5b-04c6-4ca5-9387-ed40dc27fe7e)
 
 ![image](https://github.com/Yuhyeingjoo/Postgres-/assets/54518241/7b4b7bd9-e5aa-494a-91a3-9b2c2755e00e)
 
