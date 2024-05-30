@@ -25,7 +25,7 @@
 - 입력한 SQL 쿼리가 실행되고, 그 결과가 표에 표시됩니다.
 - 쿼리 결과를 편리하게 확인할 수 있습니다.
 
-![image](https://github.com/Yuhyeingjoo/PostgresViewer/assets/54518241/81fcfb3d-2292-4ae6-ad46-a5ded2526fbe)
+![image](https://github.com/Yuhyeingjoo/PostgresViewer/assets/54518241/7ab8beb2-b069-404d-943d-d4b98c7c98b0)
 
 
 
