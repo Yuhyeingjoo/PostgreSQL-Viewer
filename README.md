@@ -63,7 +63,8 @@ https://www.postgresqltutorial.com/wp-content/uploads/2019/05/dvdrental.zip
 ---
 
 3. Tool -> Export to csv 클릭하여 원하는 경로에 csv 파일을 생성합니다.
-![image](https://github.com/Yuhyeingjoo/PostgresViewer/assets/54518241/b07fd837-37cf-4bd9-8de9-e01fe974b08e)
+![image](https://github.com/Yuhyeingjoo/PostgresViewer/assets/54518241/e8926b66-1f67-4b14-bccb-8811eddf8665)
+
 
 ![image](https://github.com/Yuhyeingjoo/Postgres-/assets/54518241/6fe64cd4-0672-4b3a-8e79-f1a9b245ab4b)
 
