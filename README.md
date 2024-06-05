@@ -25,7 +25,8 @@
 - 입력한 SQL 쿼리가 실행되고, 그 결과가 표에 표시됩니다.
 - 쿼리 결과를 편리하게 확인할 수 있습니다.
 
-![image](https://github.com/Yuhyeingjoo/PostgresViewer/assets/54518241/ee28a400-e1e8-4ec4-b332-65eb2cf34cf8)
+![image](https://github.com/Yuhyeingjoo/PostgresViewer/assets/54518241/7ab8beb2-b069-404d-943d-d4b98c7c98b0)
+
 
 
 
@@ -56,12 +57,14 @@ https://www.postgresqltutorial.com/wp-content/uploads/2019/05/dvdrental.zip
 ---
 
 2. SQL 쿼리를 입력하고 Run 버튼을 클릭합니다. 실행 결과가 표에 표시됩니다.
-![image](https://github.com/Yuhyeingjoo/PostgresViewer/assets/54518241/1eaa5e5b-04c6-4ca5-9387-ed40dc27fe7e)
+![image](https://github.com/Yuhyeingjoo/PostgresViewer/assets/54518241/a1a4d9a3-b4ac-4690-80fa-99fb750664ce)
+
 
 ---
 
 3. Tool -> Export to csv 클릭하여 원하는 경로에 csv 파일을 생성합니다.
-![image](https://github.com/Yuhyeingjoo/PostgresViewer/assets/54518241/b07fd837-37cf-4bd9-8de9-e01fe974b08e)
+![image](https://github.com/Yuhyeingjoo/PostgresViewer/assets/54518241/e8926b66-1f67-4b14-bccb-8811eddf8665)
+
 
 ![image](https://github.com/Yuhyeingjoo/Postgres-/assets/54518241/6fe64cd4-0672-4b3a-8e79-f1a9b245ab4b)
 
