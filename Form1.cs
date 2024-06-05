@@ -17,9 +17,10 @@ namespace Postgres_Viewer
 {
     public partial class Form1 : Form
     {
-       
+
         NpgsqlConnection connection;
-        List< System.Windows.Forms.TextBox> textBoxes = new List<System.Windows.Forms.TextBox>();
+        UIManager UiManager = new UIManager();
+        List<System.Windows.Forms.TextBox> textBoxes = new List<System.Windows.Forms.TextBox>();
         public Form1()
         {
             InitializeComponent();
@@ -32,20 +33,24 @@ namespace Postgres_Viewer
             textBoxes.Add(textBoxDBName);
             textBoxes.Add(textBoxPasswd);
             textBoxes.Add(textBoxUserName);
-            tabControl1.TabPages[0].Text = "Results";
-            tabControl1.TabPages[1].Text = "Problems";
+            tabControl1.TabPages[StatusVar.tabResultIndex].Text = "Results";
+            tabControl1.TabPages[StatusVar.tabProblemsIndex].Text = "Problems";
+            tabControl1.TabPages[StatusVar.tabTablesIndex].Text = "Tables";
+            tabControl1.TabPages[StatusVar.tabCallStackIndex].Text = "Call Stacks";
             this.listBox1.DrawMode = DrawMode.OwnerDrawFixed;
             this.listBox1.DrawItem += new DrawItemEventHandler(listBoxErrors_DrawItem);
-            
+
         }
         private void TextBox_KeyDown(object sender, KeyEventArgs e)
         {
+            /*
             if (e.KeyCode == Keys.Enter)
             {
                 e.Handled = true;
                 buttonRun_Click(null, null);
                 return;
             }
+            */
         }
         private void buttonConnect_Click(object sender, EventArgs e)
         {
@@ -61,16 +66,16 @@ namespace Postgres_Viewer
             }
             string connectionString = $"Host={host};Port={port};Username={username};Password={password};Database={database}";
             connection = new NpgsqlConnection(connectionString);
-            
-            if (QueryManager.connect(connection) && QueryManager.GetTables(connection, DataTableView)) {
+
+            if (QueryManager.connect(connection) && QueryManager.GetTables(connection, dataGridViewTables)) {
                 buttonConnect.Enabled = false;
                 StatusVar.connected = true;
-                foreach (var box in textBoxes) { 
+                foreach (var box in textBoxes) {
                     box.ReadOnly = true;
                 }
             }
-           
-            
+
+
         }
 
         private void buttonDisconnect_Click(object sender, EventArgs e)
@@ -85,13 +90,12 @@ namespace Postgres_Viewer
                     box.ReadOnly = false;
                 }
             }
-            catch { 
-            
+            catch {
+
             }
-            
+
         }
-
-
+        
 
         private void buttonRun_Click(object sender, EventArgs e)
         {
@@ -99,8 +103,13 @@ namespace Postgres_Viewer
             if (sql == "") {
                 return;
             }
-            if (!QueryManager.RunQuery(connection, DataTableView, listBox1, sql)) {
+            if (QueryManager.RunQuery(connection, DataTableView, listBox1, sql))
+            {
+                AddCallStack(sql);
+            }
+            else {
                 MessageBox.Show("Failed to Run Query", "Error");
+                return;
             }
 
 
@@ -109,7 +118,7 @@ namespace Postgres_Viewer
         private void tableListToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (StatusVar.connected) {
-                QueryManager.GetTables(connection, DataTableView);
+                QueryManager.GetTables(connection, dataGridViewTables);
             }
         }
 
@@ -161,6 +170,30 @@ namespace Postgres_Viewer
             }
 
             e.DrawFocusRectangle();
+        }
+        private void AddCallStack(string sql)
+        {
+            listBoxCallStack.Items.Add(sql);
+        }
+
+        private void buttonCopy_Click(object sender, EventArgs e)
+        {
+            string copyString = UiManager.GetLowestSelectedItemText(listBoxCallStack);
+            Clipboard.SetText(copyString);
+        }
+       
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            for (int i = listBoxCallStack.SelectedIndices.Count - 1; i >= 0; i--)
+            {
+                int selectedIndex = listBoxCallStack.SelectedIndices[i];
+                listBoxCallStack.Items.RemoveAt(selectedIndex);
+            }
+        }
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            listBoxCallStack.Items.Clear();
         }
     }
 }

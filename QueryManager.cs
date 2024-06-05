@@ -1,5 +1,6 @@
 ﻿using Npgsql;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,18 @@ namespace Postgres_Viewer
     {
     
         public static string Initquery = "SELECT table_name FROM information_schema.tables WHERE table_schema = 'public' AND table_type = 'BASE TABLE'";
-
+        public static string tmpInit = @"
+    SELECT
+        tbl.table_name AS ""Table Name"",
+        pg_catalog.pg_get_userbyid(cls.relowner) AS ""Owner"",
+        pg_catalog.obj_description(cls.oid, 'pg_class') AS ""Description""
+    FROM
+        information_schema.tables tbl
+    JOIN
+        pg_catalog.pg_class cls ON tbl.table_name = cls.relname
+    WHERE
+        tbl.table_schema = 'public'
+        AND tbl.table_type = 'BASE TABLE';";
 
         public static bool connect(NpgsqlConnection connection) {
             try
@@ -145,27 +157,28 @@ namespace Postgres_Viewer
         {
             try
             {
-                
-                // Sample query execution
-                using (var command = new NpgsqlCommand(QueryManager.Initquery, connection))
+                DataTableView.Rows.Clear();
+                DataTableView.Columns.Clear();
+                using (var command = new NpgsqlCommand(QueryManager.tmpInit, connection))
                 {
                     using (var reader = command.ExecuteReader())
                     {
                         if (reader.HasRows)
                         {
-                            // DataGridView 초기화
-                            DataTableView.Rows.Clear();
-                            DataTableView.Columns.Clear();
-
                             // 컬럼 헤더 추가
-                            DataTableView.Columns.Add("TableName", "Table Name");
+                            DataTableView.Columns.Add("Table Name", "Table Name");
+                            DataTableView.Columns.Add("Owner", "Owner");
+                            DataTableView.Columns.Add("Description", "Description");
 
                             // 데이터 읽기
                             while (reader.Read())
                             {
                                 // 각 행의 데이터를 배열에 추가
                                 object[] rowData = new object[reader.FieldCount];
-                                reader.GetValues(rowData);
+                                for (int i = 0; i < reader.FieldCount; i++)
+                                {
+                                    rowData[i] = reader.IsDBNull(i) ? "NULL" : reader.GetValue(i); // NULL 값을 'NULL'로 표시
+                                }
 
                                 // DataGridView에 행 추가
                                 DataTableView.Rows.Add(rowData);
