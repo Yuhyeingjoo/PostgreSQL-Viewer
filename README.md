@@ -1,4 +1,4 @@
-# Postgres Viewer
+# PostgreSQL Viewer
 
 이 프로젝트는 C# Windows Forms 애플리케이션으로, PostgreSQL 데이터베이스에 연결하여 사용자가 입력한 SQL 쿼리를 실행하고 결과를 표시하는 프로그램입니다.
 
