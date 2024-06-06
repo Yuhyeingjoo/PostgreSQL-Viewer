@@ -57,8 +57,9 @@ https://www.postgresqltutorial.com/wp-content/uploads/2019/05/dvdrental.zip
 ---
 
 2. SQL 쿼리를 입력하고 Run 버튼을 클릭합니다. 실행 결과가 표에 표시됩니다.
-![image](https://github.com/Yuhyeingjoo/PostgresViewer/assets/54518241/a1a4d9a3-b4ac-4690-80fa-99fb750664ce)
 
+
+![image](https://github.com/Yuhyeingjoo/PostgreSQL-Viewer/assets/54518241/03ec3622-ec27-4cbf-a83d-5a3056d6bd12)
 
 ---
 
