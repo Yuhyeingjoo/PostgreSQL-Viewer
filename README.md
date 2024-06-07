@@ -1,4 +1,4 @@
-# Postgres Viewer
+# PostgreSQL Viewer
 
 이 프로젝트는 C# Windows Forms 애플리케이션으로, PostgreSQL 데이터베이스에 연결하여 사용자가 입력한 SQL 쿼리를 실행하고 결과를 표시하는 프로그램입니다.
 
@@ -57,7 +57,9 @@ https://www.postgresqltutorial.com/wp-content/uploads/2019/05/dvdrental.zip
 ---
 
 2. SQL 쿼리를 입력하고 Run 버튼을 클릭합니다. 실행 결과가 표에 표시됩니다.
-![image](https://github.com/Yuhyeingjoo/PostgresViewer/assets/54518241/a1a4d9a3-b4ac-4690-80fa-99fb750664ce)
+
+
+![e](https://github.com/Yuhyeingjoo/PostgreSQL-Viewer/assets/54518241/62bad5e0-e901-4ff2-8cde-8b92c65615f1)
 
 
 ---
