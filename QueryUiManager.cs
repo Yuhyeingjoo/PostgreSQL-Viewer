@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -10,9 +11,11 @@ using System.Windows.Forms;
 
 namespace Postgres_Viewer
 {
-    public static class QueryManager
+    public static class QueryUiManager
     {
-    
+        public static List<object[]> dataRows = new List<object[]>();
+        public static int curPage = 1;
+        public static int pageSize = 20;
         public static string Initquery = "SELECT table_name FROM information_schema.tables WHERE table_schema = 'public' AND table_type = 'BASE TABLE'";
         public static string tmpInit = @"
     SELECT
@@ -52,9 +55,10 @@ namespace Postgres_Viewer
             try
             {
                 listBox.ClearSelected();
+                dataRows.Clear();  
                 using (var command = new NpgsqlCommand(sql, connection))
                 {
-                    if (QueryManager.IsSelectQuery(sql))
+                    if (QueryUiManager.IsSelectQuery(sql))
                     {
                         using (var reader = command.ExecuteReader())
                         {
@@ -91,6 +95,7 @@ namespace Postgres_Viewer
                                     DataTableView.Columns.Add(column); // 컬럼 추가
                                 }
 
+                                /*
                                 // 데이터 읽기
                                 while (reader.Read())
                                 {
@@ -101,7 +106,15 @@ namespace Postgres_Viewer
                                     // DataGridView에 행 추가
                                     DataTableView.Rows.Add(rowData);
                                 }
-
+                                */
+                                while (reader.Read())
+                                {
+                                    object[] rowData = new object[reader.FieldCount];
+                                    reader.GetValues(rowData);
+                                    dataRows.Add(rowData);
+                                }
+                                curPage = 1;
+                                LoadPage(DataTableView, dataRows, pageSize, curPage);
                                 // 컬럼 너비 자동 조정
                                 DataTableView.AutoResizeColumns();
                                 DataTableView.Refresh();
@@ -143,6 +156,36 @@ namespace Postgres_Viewer
             
             return true;
         }
+        public static void NextPage(System.Windows.Forms.DataGridView DataTableView)
+        {
+            if (curPage * pageSize < dataRows.Count)
+            {
+                curPage++;
+                LoadPage(DataTableView, dataRows, pageSize, curPage);
+            }
+        }
+        public static void PrevPage(System.Windows.Forms.DataGridView DataTableView) {
+            if (curPage > 1)
+            {
+                curPage--;
+                LoadPage(DataTableView, dataRows, pageSize, curPage);
+            }
+        }
+        private static void LoadPage(DataGridView dataGridView, List<object[]> dataRows, int pageSize, int currentPage)
+        {
+            dataGridView.Rows.Clear();
+
+            int startIndex = (currentPage - 1) * pageSize;
+            int endIndex = Math.Min(startIndex + pageSize, dataRows.Count);
+
+            for (int i = startIndex; i < endIndex; i++)
+            {
+                dataGridView.Rows.Add(dataRows[i]);
+            }
+
+            dataGridView.AutoResizeColumns();
+            dataGridView.Refresh();
+        }
         static string RemoveComments(string query)
         {
             // Remove single line comments (--)
@@ -159,7 +202,7 @@ namespace Postgres_Viewer
             {
                 DataTableView.Rows.Clear();
                 DataTableView.Columns.Clear();
-                using (var command = new NpgsqlCommand(QueryManager.tmpInit, connection))
+                using (var command = new NpgsqlCommand(QueryUiManager.tmpInit, connection))
                 {
                     using (var reader = command.ExecuteReader())
                     {

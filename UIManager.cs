@@ -9,6 +9,7 @@ namespace Postgres_Viewer
 {
     public class UIManager
     {
+        
         public string GetLowestSelectedItemText(ListBox listBox)
         {
             if (listBox.SelectedIndices.Count > 0)
@@ -27,5 +28,8 @@ namespace Postgres_Viewer
                 return "";
             }
         }
+
+        
+
     }
 }

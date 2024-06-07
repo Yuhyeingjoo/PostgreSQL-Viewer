@@ -43,14 +43,14 @@ namespace Postgres_Viewer
         }
         private void TextBox_KeyDown(object sender, KeyEventArgs e)
         {
-            /*
-            if (e.KeyCode == Keys.Enter)
+            
+            if( e.Control && e.KeyCode == Keys.Enter)
             {
                 e.Handled = true;
                 buttonRun_Click(null, null);
                 return;
             }
-            */
+            
         }
         private void buttonConnect_Click(object sender, EventArgs e)
         {
@@ -61,18 +61,19 @@ namespace Postgres_Viewer
             string database = textBoxDBName.Text;
 
             if (host == "" || username == "" || password == "" || database == "") {
-                MessageBox.Show("올바른 값을 입력하세요.", "Error");
+                MessageBox.Show("Please enter a valid value", "Error");
                 return;
             }
             string connectionString = $"Host={host};Port={port};Username={username};Password={password};Database={database}";
             connection = new NpgsqlConnection(connectionString);
 
-            if (QueryManager.connect(connection) && QueryManager.GetTables(connection, dataGridViewTables)) {
+            if (QueryUiManager.connect(connection) && QueryUiManager.GetTables(connection, dataGridViewTables)) {
                 buttonConnect.Enabled = false;
                 StatusVar.connected = true;
                 foreach (var box in textBoxes) {
                     box.ReadOnly = true;
                 }
+                MessageBox.Show("DB Connection successful!", "Connection status");
             }
 
 
@@ -103,7 +104,7 @@ namespace Postgres_Viewer
             if (sql == "") {
                 return;
             }
-            if (QueryManager.RunQuery(connection, DataTableView, listBox1, sql))
+            if (QueryUiManager.RunQuery(connection, DataTableView, listBox1, sql))
             {
                 AddCallStack(sql);
             }
@@ -118,7 +119,7 @@ namespace Postgres_Viewer
         private void tableListToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (StatusVar.connected) {
-                QueryManager.GetTables(connection, dataGridViewTables);
+                QueryUiManager.GetTables(connection, dataGridViewTables);
             }
         }
 
@@ -194,6 +195,16 @@ namespace Postgres_Viewer
         private void buttonClear_Click(object sender, EventArgs e)
         {
             listBoxCallStack.Items.Clear();
+        }
+
+        private void rightPageBtn_Click(object sender, EventArgs e)
+        {
+            QueryUiManager.NextPage(DataTableView);
+        }
+
+        private void LeftPageBtn_Click(object sender, EventArgs e)
+        {
+            QueryUiManager.PrevPage(DataTableView);
         }
     }
 }

@@ -50,27 +50,32 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tab1TablePanel = new System.Windows.Forms.TableLayoutPanel();
             this.panelTab1 = new System.Windows.Forms.Panel();
             this.DataTableView = new System.Windows.Forms.DataGridView();
+            this.tab1LowTablePanel = new System.Windows.Forms.TableLayoutPanel();
+            this.LeftPageBtn = new System.Windows.Forms.Button();
+            this.rightPageBtn = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panelTab2 = new System.Windows.Forms.Panel();
+            this.dataGridViewTables = new System.Windows.Forms.DataGridView();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.panelTab3 = new System.Windows.Forms.Panel();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.tab4CallStackPanel = new System.Windows.Forms.Panel();
+            this.listBoxCallStack = new System.Windows.Forms.ListBox();
+            this.tab4ToolPanel = new System.Windows.Forms.Panel();
+            this.buttonClear = new System.Windows.Forms.Button();
+            this.buttonDelete = new System.Windows.Forms.Button();
+            this.buttonCopy = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tableListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clearViewerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportToCsvToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.panelTab3 = new System.Windows.Forms.Panel();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.dataGridViewTables = new System.Windows.Forms.DataGridView();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.tab4ToolPanel = new System.Windows.Forms.Panel();
-            this.tab4CallStackPanel = new System.Windows.Forms.Panel();
-            this.buttonCopy = new System.Windows.Forms.Button();
-            this.buttonDelete = new System.Windows.Forms.Button();
-            this.listBoxCallStack = new System.Windows.Forms.ListBox();
-            this.buttonClear = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -80,18 +85,20 @@
             this.panel3.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tab1TablePanel.SuspendLayout();
             this.panelTab1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataTableView)).BeginInit();
+            this.tab1LowTablePanel.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.panelTab2.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTables)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.panelTab3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTables)).BeginInit();
             this.tabPage4.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
-            this.tab4ToolPanel.SuspendLayout();
             this.tab4CallStackPanel.SuspendLayout();
+            this.tab4ToolPanel.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -260,6 +267,7 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.label6);
             this.panel4.Controls.Add(this.buttonRun);
             this.panel4.Controls.Add(this.label5);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -270,9 +278,9 @@
             // 
             // buttonRun
             // 
-            this.buttonRun.Location = new System.Drawing.Point(6, 18);
+            this.buttonRun.Location = new System.Drawing.Point(6, 27);
             this.buttonRun.Name = "buttonRun";
-            this.buttonRun.Size = new System.Drawing.Size(65, 24);
+            this.buttonRun.Size = new System.Drawing.Size(65, 35);
             this.buttonRun.TabIndex = 6;
             this.buttonRun.Text = "Run";
             this.buttonRun.UseVisualStyleBackColor = true;
@@ -311,7 +319,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.panelTab1);
+            this.tabPage1.Controls.Add(this.tab1TablePanel);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -320,14 +328,29 @@
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // tab1TablePanel
+            // 
+            this.tab1TablePanel.ColumnCount = 1;
+            this.tab1TablePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tab1TablePanel.Controls.Add(this.panelTab1, 0, 0);
+            this.tab1TablePanel.Controls.Add(this.tab1LowTablePanel, 0, 1);
+            this.tab1TablePanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tab1TablePanel.Location = new System.Drawing.Point(3, 3);
+            this.tab1TablePanel.Name = "tab1TablePanel";
+            this.tab1TablePanel.RowCount = 2;
+            this.tab1TablePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tab1TablePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
+            this.tab1TablePanel.Size = new System.Drawing.Size(850, 315);
+            this.tab1TablePanel.TabIndex = 1;
+            // 
             // panelTab1
             // 
             this.panelTab1.Controls.Add(this.DataTableView);
             this.panelTab1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelTab1.Location = new System.Drawing.Point(3, 3);
             this.panelTab1.Name = "panelTab1";
-            this.panelTab1.Size = new System.Drawing.Size(850, 315);
-            this.panelTab1.TabIndex = 0;
+            this.panelTab1.Size = new System.Drawing.Size(844, 276);
+            this.panelTab1.TabIndex = 1;
             // 
             // DataTableView
             // 
@@ -340,8 +363,47 @@
             this.DataTableView.Name = "DataTableView";
             this.DataTableView.ReadOnly = true;
             this.DataTableView.RowTemplate.Height = 23;
-            this.DataTableView.Size = new System.Drawing.Size(850, 315);
+            this.DataTableView.Size = new System.Drawing.Size(844, 276);
             this.DataTableView.TabIndex = 1;
+            // 
+            // tab1LowTablePanel
+            // 
+            this.tab1LowTablePanel.ColumnCount = 2;
+            this.tab1LowTablePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tab1LowTablePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tab1LowTablePanel.Controls.Add(this.LeftPageBtn, 0, 0);
+            this.tab1LowTablePanel.Controls.Add(this.rightPageBtn, 1, 0);
+            this.tab1LowTablePanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tab1LowTablePanel.Location = new System.Drawing.Point(3, 285);
+            this.tab1LowTablePanel.Name = "tab1LowTablePanel";
+            this.tab1LowTablePanel.RowCount = 1;
+            this.tab1LowTablePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tab1LowTablePanel.Size = new System.Drawing.Size(844, 27);
+            this.tab1LowTablePanel.TabIndex = 2;
+            // 
+            // LeftPageBtn
+            // 
+            this.LeftPageBtn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.LeftPageBtn.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.LeftPageBtn.Location = new System.Drawing.Point(392, 3);
+            this.LeftPageBtn.Name = "LeftPageBtn";
+            this.LeftPageBtn.Size = new System.Drawing.Size(27, 21);
+            this.LeftPageBtn.TabIndex = 2;
+            this.LeftPageBtn.Text = "<";
+            this.LeftPageBtn.UseVisualStyleBackColor = true;
+            this.LeftPageBtn.Click += new System.EventHandler(this.LeftPageBtn_Click);
+            // 
+            // rightPageBtn
+            // 
+            this.rightPageBtn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.rightPageBtn.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.rightPageBtn.Location = new System.Drawing.Point(425, 3);
+            this.rightPageBtn.Name = "rightPageBtn";
+            this.rightPageBtn.Size = new System.Drawing.Size(25, 21);
+            this.rightPageBtn.TabIndex = 1;
+            this.rightPageBtn.Text = ">";
+            this.rightPageBtn.UseVisualStyleBackColor = true;
+            this.rightPageBtn.Click += new System.EventHandler(this.rightPageBtn_Click);
             // 
             // tabPage2
             // 
@@ -363,47 +425,19 @@
             this.panelTab2.Size = new System.Drawing.Size(850, 315);
             this.panelTab2.TabIndex = 0;
             // 
-            // menuStrip1
+            // dataGridViewTables
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(870, 24);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tableListToolStripMenuItem,
-            this.clearViewerToolStripMenuItem,
-            this.exportToCsvToolStripMenuItem});
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(42, 20);
-            this.toolStripMenuItem1.Text = "Tool";
-            // 
-            // tableListToolStripMenuItem
-            // 
-            this.tableListToolStripMenuItem.Name = "tableListToolStripMenuItem";
-            this.tableListToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.tableListToolStripMenuItem.Text = "TableList";
-            this.tableListToolStripMenuItem.Click += new System.EventHandler(this.tableListToolStripMenuItem_Click);
-            // 
-            // clearViewerToolStripMenuItem
-            // 
-            this.clearViewerToolStripMenuItem.Name = "clearViewerToolStripMenuItem";
-            this.clearViewerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.clearViewerToolStripMenuItem.Text = "Clear Viewer";
-            this.clearViewerToolStripMenuItem.Click += new System.EventHandler(this.clearViewerToolStripMenuItem_Click);
-            // 
-            // exportToCsvToolStripMenuItem
-            // 
-            this.exportToCsvToolStripMenuItem.Name = "exportToCsvToolStripMenuItem";
-            this.exportToCsvToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.exportToCsvToolStripMenuItem.Text = "Export to csv";
-            this.exportToCsvToolStripMenuItem.Click += new System.EventHandler(this.exportToCsvToolStripMenuItem_Click);
+            this.dataGridViewTables.AllowUserToAddRows = false;
+            this.dataGridViewTables.AllowUserToDeleteRows = false;
+            this.dataGridViewTables.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dataGridViewTables.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewTables.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewTables.Location = new System.Drawing.Point(0, 0);
+            this.dataGridViewTables.Name = "dataGridViewTables";
+            this.dataGridViewTables.ReadOnly = true;
+            this.dataGridViewTables.RowTemplate.Height = 23;
+            this.dataGridViewTables.Size = new System.Drawing.Size(850, 315);
+            this.dataGridViewTables.TabIndex = 2;
             // 
             // tabPage3
             // 
@@ -436,20 +470,6 @@
             this.listBox1.Size = new System.Drawing.Size(850, 315);
             this.listBox1.TabIndex = 1;
             // 
-            // dataGridViewTables
-            // 
-            this.dataGridViewTables.AllowUserToAddRows = false;
-            this.dataGridViewTables.AllowUserToDeleteRows = false;
-            this.dataGridViewTables.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dataGridViewTables.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewTables.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewTables.Location = new System.Drawing.Point(0, 0);
-            this.dataGridViewTables.Name = "dataGridViewTables";
-            this.dataGridViewTables.ReadOnly = true;
-            this.dataGridViewTables.RowTemplate.Height = 23;
-            this.dataGridViewTables.Size = new System.Drawing.Size(850, 315);
-            this.dataGridViewTables.TabIndex = 2;
-            // 
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.tableLayoutPanel3);
@@ -476,6 +496,25 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(850, 315);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
+            // tab4CallStackPanel
+            // 
+            this.tab4CallStackPanel.Controls.Add(this.listBoxCallStack);
+            this.tab4CallStackPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tab4CallStackPanel.Location = new System.Drawing.Point(3, 35);
+            this.tab4CallStackPanel.Name = "tab4CallStackPanel";
+            this.tab4CallStackPanel.Size = new System.Drawing.Size(844, 277);
+            this.tab4CallStackPanel.TabIndex = 1;
+            // 
+            // listBoxCallStack
+            // 
+            this.listBoxCallStack.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBoxCallStack.FormattingEnabled = true;
+            this.listBoxCallStack.ItemHeight = 12;
+            this.listBoxCallStack.Location = new System.Drawing.Point(0, 0);
+            this.listBoxCallStack.Name = "listBoxCallStack";
+            this.listBoxCallStack.Size = new System.Drawing.Size(844, 277);
+            this.listBoxCallStack.TabIndex = 0;
+            // 
             // tab4ToolPanel
             // 
             this.tab4ToolPanel.Controls.Add(this.buttonClear);
@@ -484,30 +523,21 @@
             this.tab4ToolPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tab4ToolPanel.Location = new System.Drawing.Point(3, 3);
             this.tab4ToolPanel.Name = "tab4ToolPanel";
-            this.tab4ToolPanel.Size = new System.Drawing.Size(844, 27);
+            this.tab4ToolPanel.Size = new System.Drawing.Size(844, 26);
             this.tab4ToolPanel.TabIndex = 0;
             // 
-            // tab4CallStackPanel
+            // buttonClear
             // 
-            this.tab4CallStackPanel.Controls.Add(this.listBoxCallStack);
-            this.tab4CallStackPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tab4CallStackPanel.Location = new System.Drawing.Point(3, 36);
-            this.tab4CallStackPanel.Name = "tab4CallStackPanel";
-            this.tab4CallStackPanel.Size = new System.Drawing.Size(844, 276);
-            this.tab4CallStackPanel.TabIndex = 1;
-            // 
-            // buttonCopy
-            // 
-            this.buttonCopy.BackColor = System.Drawing.Color.Transparent;
-            this.buttonCopy.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonCopy.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.buttonCopy.Location = new System.Drawing.Point(3, 3);
-            this.buttonCopy.Name = "buttonCopy";
-            this.buttonCopy.Size = new System.Drawing.Size(44, 20);
-            this.buttonCopy.TabIndex = 0;
-            this.buttonCopy.Text = "Copy";
-            this.buttonCopy.UseVisualStyleBackColor = false;
-            this.buttonCopy.Click += new System.EventHandler(this.buttonCopy_Click);
+            this.buttonClear.BackColor = System.Drawing.Color.Transparent;
+            this.buttonClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonClear.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.buttonClear.Location = new System.Drawing.Point(103, 3);
+            this.buttonClear.Name = "buttonClear";
+            this.buttonClear.Size = new System.Drawing.Size(44, 20);
+            this.buttonClear.TabIndex = 1;
+            this.buttonClear.Text = "Clear";
+            this.buttonClear.UseVisualStyleBackColor = false;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
             // buttonDelete
             // 
@@ -522,28 +552,70 @@
             this.buttonDelete.UseVisualStyleBackColor = false;
             this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
-            // listBoxCallStack
+            // buttonCopy
             // 
-            this.listBoxCallStack.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBoxCallStack.FormattingEnabled = true;
-            this.listBoxCallStack.ItemHeight = 12;
-            this.listBoxCallStack.Location = new System.Drawing.Point(0, 0);
-            this.listBoxCallStack.Name = "listBoxCallStack";
-            this.listBoxCallStack.Size = new System.Drawing.Size(844, 276);
-            this.listBoxCallStack.TabIndex = 0;
+            this.buttonCopy.BackColor = System.Drawing.Color.Transparent;
+            this.buttonCopy.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonCopy.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.buttonCopy.Location = new System.Drawing.Point(3, 3);
+            this.buttonCopy.Name = "buttonCopy";
+            this.buttonCopy.Size = new System.Drawing.Size(44, 20);
+            this.buttonCopy.TabIndex = 0;
+            this.buttonCopy.Text = "Copy";
+            this.buttonCopy.UseVisualStyleBackColor = false;
+            this.buttonCopy.Click += new System.EventHandler(this.buttonCopy_Click);
             // 
-            // buttonClear
+            // menuStrip1
             // 
-            this.buttonClear.BackColor = System.Drawing.Color.Transparent;
-            this.buttonClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonClear.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.buttonClear.Location = new System.Drawing.Point(103, 3);
-            this.buttonClear.Name = "buttonClear";
-            this.buttonClear.Size = new System.Drawing.Size(44, 20);
-            this.buttonClear.TabIndex = 1;
-            this.buttonClear.Text = "Clear";
-            this.buttonClear.UseVisualStyleBackColor = false;
-            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
+            this.menuStrip1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(870, 24);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tableListToolStripMenuItem,
+            this.clearViewerToolStripMenuItem,
+            this.exportToCsvToolStripMenuItem});
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(42, 20);
+            this.toolStripMenuItem1.Text = "Tool";
+            // 
+            // tableListToolStripMenuItem
+            // 
+            this.tableListToolStripMenuItem.Name = "tableListToolStripMenuItem";
+            this.tableListToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.tableListToolStripMenuItem.Text = "TableList";
+            this.tableListToolStripMenuItem.Click += new System.EventHandler(this.tableListToolStripMenuItem_Click);
+            // 
+            // clearViewerToolStripMenuItem
+            // 
+            this.clearViewerToolStripMenuItem.Name = "clearViewerToolStripMenuItem";
+            this.clearViewerToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.clearViewerToolStripMenuItem.Text = "Clear Viewer";
+            this.clearViewerToolStripMenuItem.Click += new System.EventHandler(this.clearViewerToolStripMenuItem_Click);
+            // 
+            // exportToCsvToolStripMenuItem
+            // 
+            this.exportToCsvToolStripMenuItem.Name = "exportToCsvToolStripMenuItem";
+            this.exportToCsvToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.exportToCsvToolStripMenuItem.Text = "Export to csv";
+            this.exportToCsvToolStripMenuItem.Click += new System.EventHandler(this.exportToCsvToolStripMenuItem_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label6.Location = new System.Drawing.Point(9, 67);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(58, 11);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "Ctrl+Enter";
             // 
             // Form1
             // 
@@ -569,19 +641,21 @@
             this.panel3.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.tab1TablePanel.ResumeLayout(false);
             this.panelTab1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DataTableView)).EndInit();
+            this.tab1LowTablePanel.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.panelTab2.ResumeLayout(false);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTables)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.panelTab3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTables)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
-            this.tab4ToolPanel.ResumeLayout(false);
             this.tab4CallStackPanel.ResumeLayout(false);
+            this.tab4ToolPanel.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -616,10 +690,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Panel panelTab1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Panel panelTab2;
-        private System.Windows.Forms.DataGridView DataTableView;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Panel panelTab3;
         private System.Windows.Forms.ListBox listBox1;
@@ -632,6 +704,13 @@
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.ListBox listBoxCallStack;
         private System.Windows.Forms.Button buttonClear;
+        private System.Windows.Forms.TableLayoutPanel tab1TablePanel;
+        private System.Windows.Forms.Panel panelTab1;
+        private System.Windows.Forms.DataGridView DataTableView;
+        private System.Windows.Forms.TableLayoutPanel tab1LowTablePanel;
+        private System.Windows.Forms.Button LeftPageBtn;
+        private System.Windows.Forms.Button rightPageBtn;
+        private System.Windows.Forms.Label label6;
     }
 }
 

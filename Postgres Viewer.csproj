@@ -139,7 +139,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QueryManager.cs" />
+    <Compile Include="QueryUiManager.cs" />
     <Compile Include="StatusVar.cs" />
     <Compile Include="UIManager.cs" />
     <EmbeddedResource Include="Form1.resx">
